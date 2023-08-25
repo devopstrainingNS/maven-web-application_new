@@ -12,7 +12,7 @@ node{
     
     stage('Deploy'){
         sshagent(['d5b0c240-acd3-4e54-bdb1-24eec06d3809']) {
-        sh "scp -o StrictHostKeyChecking=no target/tesla.war ec2-user@65.0.168.247:/opt/tomcat9/webapps"
+        sh "scp -o StrictHostKeyChecking=no target/tesla.war ec2-user@172.31.35.45:/opt/tomcat9/webapps"
       }
     }
 }
