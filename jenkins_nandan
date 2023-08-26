@@ -1,6 +1,8 @@
 node{
     
     def mavenhome = tool name : 'Maven3.9.4'
+
+    properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), pipelineTriggers([pollSCM('* * * * *')])])
     
     stage('code checkout'){
         git branch: 'development', credentialsId: 'eb5bae86-60d8-4772-9bd7-7c445d5de398', url: 'https://github.com/devopstrainingNS/maven-web-application_new.git'
